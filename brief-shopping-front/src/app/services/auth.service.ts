@@ -53,7 +53,6 @@ export class AuthService {
       }
   }
   // ***************************************************************************************************************************
-
   getCurrentUser(){
       const user_id:any =localStorage.getItem('USER_ID');
       if(user_id){
