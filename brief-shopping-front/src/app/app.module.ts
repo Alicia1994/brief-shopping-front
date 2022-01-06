@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { PageNotFoundComponentComponent } from './pages/page-not-found-component/page-not-found-component.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponentComponent
+    PageNotFoundComponentComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
