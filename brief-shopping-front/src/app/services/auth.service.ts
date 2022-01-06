@@ -19,24 +19,8 @@ export class AuthService {
 
   constructor(
     private httpClient: HttpClient,
-    private router: Router  ) {
-    // this.API_URL = this.dev ? this.URL_DEV : this.URL_TEST;//pour dire si le dev utilise son ordinateur ou pas. si c'est le cas on utilise le localhost sinon on utilise l'url
-  }
-  //seul le dev se connecte avec le localhost tout les autres users utilisent le URL_TEST pour acceder au site
-  // ***************************************************************************************************************************
-  // login(user: UserRequest) {
-  //   // return this.httpClient.post(`${this.baseUrl}/login`, user)
-  //   return this.httpClient.post(`http://localhost:8080/api/auth/login`, user)
-  //   .pipe(
-  //     map((resp: any) => {
-  //       localStorage.setItem('TOKEN_APPLI', resp.accessToken);
-  //       localStorage.setItem('USER_ID', resp.id);
-  //       console.log(resp.id);
-  //       console.log('Token Save');
-  //       return resp;
-  //     })
-  //   );
-  // }
+    private router: Router  ) {  }
+
 
   login(user: UserRequest) {
     return this.httpClient.post(`${this.URL_DEV}/login`, user)
@@ -69,6 +53,7 @@ export class AuthService {
       }
   }
   // ***************************************************************************************************************************
+
   getCurrentUser(){
       const user_id:any =localStorage.getItem('USER_ID');
       if(user_id){
