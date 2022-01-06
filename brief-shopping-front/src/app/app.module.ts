@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { PageNotFoundComponentComponent } from './pages/page-not-found-component/page-not-found-component.component';
-import { RegisterComponent } from './register/register.component';
+import { RegisterComponent } from './components/pages/register/register.component';
 
 @NgModule({
   declarations: [
