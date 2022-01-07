@@ -6,11 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { PageNotFoundComponentComponent } from './pages/page-not-found-component/page-not-found-component.component';
+import { NavbarComponent } from './pages/navbar/navbar.component';
+import { HomepageComponent } from './pages/homepage/homepage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponentComponent
+    PageNotFoundComponentComponent,
+    NavbarComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,

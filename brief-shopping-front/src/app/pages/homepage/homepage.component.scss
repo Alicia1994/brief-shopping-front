@@ -1,0 +1,24 @@
+.custom-main {
+    min-height: calc(100vh - 54px);
+}
+
+.custom-side-bar {
+    min-height: calc(100vh - 54px);
+    height: 100%;
+    width: 280px;
+}
+
+.plant {
+    min-height: 22rem;
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+.like {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
