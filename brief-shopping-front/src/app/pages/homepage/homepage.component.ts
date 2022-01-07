@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { map, Observable, Subscription } from 'rxjs';
+import { Category } from 'src/app/models/category';
 import { Product } from 'src/app/models/product';
+import { CategoryService } from 'src/app/services/category.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -10,32 +12,17 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class HomepageComponent implements OnInit {
 
-// dataProduct?: Product[];
-// product$: Observable<Array<Product>> | undefined;
-// products: any;
-
 products: Product[] = [];
+categories: Category[] = [];
 
-
-constructor(private productService: ProductService) {
+constructor(private productService: ProductService, private categoryService: CategoryService) {
  }
 
 ngOnInit(): void {
-//  console.log(this.products);
-
 
 this.retrieveProducts();
-
-
-  // this.product$ = this.productService.findAllProducts().pipe(
-  //   map((products: Array<Product>) => {
-  //     console.log(products);
-  //     this.dataProduct = products;
-  //     console.log(this.dataProduct);
-  //     return products;
-  //   }));
+this.retrieveCategories();
 }
-
 
 retrieveProducts(): void {
   this.productService.findAllProducts()
@@ -49,33 +36,16 @@ retrieveProducts(): void {
       });
 }
 
-getProducts(){
-  this.productService.findAllProducts().subscribe(
-    (product: Product[]) => {
-      console.log(product);
-    }
-  )
+retrieveCategories(): void {
+  this.categoryService.findAll()
+    .subscribe(
+      data => {
+        this.categories= data;
+        console.log(this.categories);
+      },
+      error => {
+        console.log(error);
+      });
 }
-
-
-// ngOnInit(): void {
-//   this.getUsers();
-//   this.userSubscription = this.userService.userSubject.subscribe(
-//     (resp: User[]) => {
-//       this.dataUser = resp;
-//     }
-//   )
-// }
-
-// getUsers() {
-//   this.userService.getAllUser().subscribe(
-//     (users:User[]) => {
-//       const roles = ["ROLE_EMPLOYE", "ROLE_CLIENT"];
-//       console.log(users);
-//       this.dataUsers = users.filter((data:User) =>
-//       !!data.roles?.find((role:any) => roles.includes(role.name)));
-//     }
-//   )
-// }
 
 }
