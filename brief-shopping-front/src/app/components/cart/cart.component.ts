@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
 
@@ -11,12 +13,16 @@ import { UserService } from 'src/app/services/user.service';
 export class CartComponent implements OnInit {
   @Input() user?: User;
   @Output() idToDelete = new EventEmitter<number>();
+  userSubscription?: Subscription;
+  dataUsers?: User[];
+  dataUser?: User[];
 
   constructor(
     private userService: UserService,
     private router: Router,
     private route: ActivatedRoute
   ) { }
+
 
   ngOnInit(): void { }
 
@@ -33,4 +39,17 @@ export class CartComponent implements OnInit {
     )
   }
 
+  tolowerRole(roleName:any){
+    const role:any = {
+        ROLE_EMPLOYE: 'Employe',
+        ROLE_CLIENT: 'Client',
+        ROLE_ADMIN: 'Admin',
+    }
+    return role[roleName];
+  }
+
+  toBack(event:any){//permet de revenir en haut
+    window.scrollTo(0,0);//permet de definir l'endroit exact (en px) pour revenir dans la page
+    event.preventDefault();
+  }
 }

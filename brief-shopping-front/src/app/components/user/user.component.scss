@@ -1,25 +1,75 @@
-.searchbar{
-  margin-top: 1rem;
-}
-.projet{
+
+
+.user{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  .list-projets{
+  .list-users{
     max-width: 300px;
     min-width: 250px;
-    border: 1px solid salmon;
-    background-color: rgb(238, 234, 234);
-    border-radius: 10px;
-    color: #3c5aa6;
+    margin: 15px;
+    background-color: #138496;
     margin: 1rem;
+    color: white;
+    border-radius: 10px;
     .content{
       span{
         font-size: medium;
       }
     }
+
+    .buttons{
+      margin: 1rem;
+      display: flex;
+      justify-content: space-around;
+      .button{
+        border-radius: 5px;
+        padding: 5px;
+        margin: 5px;
+        background-color: cadetblue;
+        color: white;
+        border: none;
+        &:hover{
+          background-color: #979690;
+          color: black;
+        }
+      }
+    }
   }
+  .list-projects{
+    margin: 1rem;
+    display: flex;
+    justify-content: space-around;
+
+    .conteneur{
+      margin: 15px;
+      background-color: #138496;
+      margin: 1rem;
+      color: white;
+      border-radius: 10px;
+      width: 25%;    }
+
+    .buttons{
+      margin: 1rem;
+      display: flex;
+      justify-content: space-around;
+      .button{
+        border-radius: 5px;
+        padding: 5px;
+        margin: 5px;
+        background-color: cadetblue;
+        color: white;
+        border: none;
+        &:hover{
+          background-color: #979690;
+          color: black;
+        }
+      }
+    }
+  }
+
 }
+
 
 .buttons{
   padding: 10px;
@@ -34,4 +84,3 @@
     border-radius: 5px;
   }
 }
-

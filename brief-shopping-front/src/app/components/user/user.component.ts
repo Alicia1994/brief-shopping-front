@@ -22,6 +22,10 @@ export class UserComponent implements OnInit {
     private userService: UserService
   ) {}
 
+  searchForm = new FormGroup({
+    name: new FormControl('')
+  });
+
   ngOnInit(): void {
     this.getUsers();
     this.userSubscription = this.userService.userSubject.subscribe(
@@ -42,6 +46,19 @@ export class UserComponent implements OnInit {
     )
   }
 
+  getUser() {
+    this.userSubscription = this.userService.searchUser(this.searchForm.value).subscribe(
+      (resp: User[]) => {
+        this.dataUser = resp;
+        console.log(this.dataUser)
+      }
+    )
+  }
+
+  onSubmit() {
+    this.getUser();
+  }
+
   ngOnDestroy(){
     this.userSubscription?.unsubscribe();
     console.log('destroy component project')
@@ -49,5 +66,30 @@ export class UserComponent implements OnInit {
 
   onDelete(id:number){
     this.dataUser = this.dataUser?.filter((data:any) => data.id != id)
+  }
+
+  tolowerRole(roleName:any){
+    const role:any = {
+        ROLE_EMPLOYE: 'Employe',
+        ROLE_CLIENT: 'Client',
+        ROLE_ADMIN: 'Admin',
+    }
+    return role[roleName];
+  }
+
+  deleteUser(user: any) {
+    this.userService.delete(user.id).subscribe(
+      (user: User) => {
+        console.log(user);
+        this.dataUser = this.dataUser?.filter((data:any) => data.id != user.id);
+        console.log('delete reussit');
+      }
+    )
+  }
+
+
+  toBack(event:any){//permet de revenir en haut
+    window.scrollTo(0,0);//permet de definir l'endroit exact (en px) pour revenir dans la page
+    event.preventDefault();
   }
 }
