@@ -1,9 +1,21 @@
 <div class="d-flex align-items-stretch">
-    <app-filter-sidebar></app-filter-sidebar>
-    <!-- Ici on communique du parent vers l'enfant à l'aide du property binding   
-        la propriété de l'enfant possède un décorateur @Input pour rendre sa valeur 
-        paramétrable par son parent.
-    -->
+
+    <div class="custom-side-bar flex-shrink-0 bg-white border-end">
+        <div class="p-3">
+            <span class="fs-5 fw-semibold">Filtres</span>
+        </div>
+        <ul class="list-unstyled ps-0 border-top">
+            <div class="p-3">
+                <p class="mb-1 fs-5 fw-semibold">Catégories</p>
+                <div class="form-check" *ngFor="let category of categories">
+                    <label for="{{category}}" class="form-check-label">
+                        {{ category?.name }}
+                    </label>
+                </div>
+            </div>
+        </ul>
+    </div>
+
     <div class="custom-main container p-3">
         <input class="form-control" type="text" placeholder="Recherche ton DVD" aria-label="Recherche ton DVD">
 
@@ -17,9 +29,6 @@
         <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-xl-3 g-4">
             <div *ngFor="let product of products" class="col">
                 <div class="plant card" style="width: 14rem;">
-
-                    <!-- <app-icon class="like" [name]="'heart'" [color]="'#e35d6a'"></app-icon> -->
-
                     <img src="" class="card-img-top" alt="image de {{product?.name}}">
                     <div class="card-body">
                         <h6 class="card-title"> {{product?.name}} </h6>
@@ -33,12 +42,9 @@
                             <a href="#" class="btn btn-success">Details</a>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
-
     </div>
 
 </div>
