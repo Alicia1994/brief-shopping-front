@@ -6,11 +6,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { PageNotFoundComponentComponent } from './pages/page-not-found-component/page-not-found-component.component';
+import { NavbarComponent } from './pages/navbar/navbar.component';
+import { HomepageComponent } from './pages/homepage/homepage.component';
+import { FilterSidebarComponent } from './pages/filter-sidebar/filter-sidebar.component';
+//import { ProductCardComponent } from './pages/product-card/product-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponentComponent
+    PageNotFoundComponentComponent,
+    NavbarComponent,
+    HomepageComponent,
+    FilterSidebarComponent,
+    //ProductCardComponent
   ],
   imports: [
     BrowserModule,
