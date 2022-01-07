@@ -39,8 +39,8 @@ export class UserService {
     return this.httpClient.get<Array<UserRequest>>(`${this.baseUrl}`);
   }
 
-  searchUser(search: SearchRequest){
-    return this.httpClient.post<Array<User>>(`${this.baseUrl}/searchProject`, search);
+  searchUser(username: String){
+    return this.httpClient.get<User>(`http://localhost:8080/api/users/search/mari/${username}`);
   }
 
   updateUser(updateUser: UserRequest) {

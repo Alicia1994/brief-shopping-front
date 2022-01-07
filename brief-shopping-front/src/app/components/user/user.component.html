@@ -25,12 +25,14 @@ class="list-projects">
 </div> -->
 
 
-<form class="d-flex SEARCH" (ngSubmit)="onSubmit()" [formGroup]="searchForm">
-  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" formControlName="name">
-  <button class="btn btn-outline-success" type="submit">
-    <i class="fas fa-search"></i>
-  </button>
-</form>
+<div class="bloc">
+  <form class="d-flex SEARCH" (ngSubmit)="onSubmit()" [formGroup]="searchForm">
+    <input class="form-control me-3" type="search" placeholder="Search" aria-label="Search" formControlName="name">
+    <button class="btn btn-outline-success" type="submit">
+      Search
+    </button>
+  </form>
+</div>
   <div class="user">
     <div class="list-users" *ngFor="let user of dataUsers">
       <div class="container conteneur">

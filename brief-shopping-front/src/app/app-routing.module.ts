@@ -21,15 +21,8 @@ const routes: Routes = [
   { path: 'user', component: UserComponent},
   { path: 'edit-profil', component: EditUserComponent},
   { path: 'profil', component: UserProfilComponent},
-
-  { path: '**', component: RegisterComponent},
-
-  // { path: '**', component: PageNotFoundComponentComponent }
-
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: HomepageComponent, pathMatch: 'full'},
-
-
   { path: '**', component: PageNotFoundComponentComponent }
 
 ];

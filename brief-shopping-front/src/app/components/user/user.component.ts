@@ -14,6 +14,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class UserComponent implements OnInit {
   dataUsers?: User[];
   dataUser?: User[];
+  dataUserr?: User;
   user?: User;
   userSubscription?: Subscription;
 
@@ -47,15 +48,17 @@ export class UserComponent implements OnInit {
   }
 
   getUser() {
+    console.log(this.searchForm.value)
     this.userSubscription = this.userService.searchUser(this.searchForm.value).subscribe(
-      (resp: User[]) => {
-        this.dataUser = resp;
+      (resp: User) => {
+        this.dataUserr = resp;
         console.log(this.dataUser)
       }
     )
   }
 
   onSubmit() {
+    // ne fonctionne pas pour l'instant
     this.getUser();
   }
 
