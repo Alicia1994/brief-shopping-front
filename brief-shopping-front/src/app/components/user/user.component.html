@@ -1,0 +1,16 @@
+<app-cart
+*ngFor="let data of dataUsers"
+(idToDelete)="onDelete($event)"
+[user]="data" class="list">
+</app-cart>
+
+<div class="container-projet">
+  <h4>Ajouter un nouveau utilisateur</h4>
+  <button type="button" class="button"
+    routerLink="/newUser-"
+    routerLinkActive="active">
+    <div class="buttonAdd">
+      <i class="fas fa-plus-circle"></i>
+    </div>
+  </button>
+</div>

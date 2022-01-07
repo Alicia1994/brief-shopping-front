@@ -1,0 +1,21 @@
+<div class="container list-projects">
+  <div class="head">
+    <h2>Projet: <span>{{ user?.username }}</span></h2>
+
+  </div>
+  <hr>
+  <div class="content">
+    <h4>Date de Début: <span>{{ user?.email }}</span></h4>
+    <h4>Besoin: <span>{{ user?.presentation }}</span></h4>
+    <h4>Description: <span>{{ user?.roles }}</span></h4>
+  </div>
+  <div class="buttons">
+    <!-- <button type="button" class="button" placement="top" ngbTooltip="Modifier le projet" [routerLink]="['/edit-profil', user?.id]"> -->
+      <button type="button" class="button" placement="top" ngbTooltip="Modifier le projet">//[routerLink]="['/edit-profil', user?.id]"
+      Modifier
+    </button>
+    <button type="button" class="button"  (click)="deleteUser(user?.id)" ngbTooltip="Modifier le projet">
+      Supprimer
+    </button>
+  </div>
+</div>

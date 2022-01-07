@@ -1,0 +1,54 @@
+<div class="login-form text-center">
+  <main class="form-signin">
+    <form (ngSubmit)="updateUser()" [formGroup]="userForm">
+      <h1>Modifiez votre compte !</h1>
+
+      <div class="form-floating">
+        <input
+          type="text"
+          class="form-control"
+          id="floatingInput"
+          placeholder=""
+          formControlName="username"
+        />
+        <label for="floatingInput">username</label>
+      </div>
+
+      <div class="form-floating">
+        <input
+          type="email"
+          [ngClass]="{
+            'is-invalid':
+              (userForm.get('email')?.dirty ||
+              userForm.get('email')?.touched) &&
+              userForm.get('email')?.invalid
+          }"
+          class="form-control"
+          id="floatingInput"
+          placeholder=""
+          formControlName="email"
+        />
+        <label for="floatingInput">Adresse email</label>
+      </div>
+
+      <div class="form-floating">
+        <input
+          type="text"
+          class="form-control"
+          id="floatingInput"
+          placeholder=""
+          formControlName="presentation"
+        />
+        <label for="floatingInput">presentation</label>
+      </div>
+
+      <div class="buttons">
+        <button class="button"
+        type="submit"
+        >Modifier</button>
+        <button class="button"
+                type="submit" onclick="history.back(-1)">Annuler</button>
+      </div>
+    </form>
+  </main>
+</div>

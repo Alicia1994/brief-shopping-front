@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { SearchProjetRequest } from '../models/payload/search-projet.request';
+import { SearchRequest } from '../models/payload/searchRequest';
 import { UserRequest } from '../models/payload/user.request';
+import { User } from '../models/user';
 
 
 @Injectable({
@@ -38,15 +39,11 @@ export class UserService {
     return this.httpClient.get<Array<UserRequest>>(`${this.baseUrl}`);
   }
 
-  getByUsername(username: string) {
-    return this.httpClient.get<UserRequest>(`${this.baseUrl}/${username}`);
-  }
-
-  searchUser(search: SearchProjetRequest){
+  searchUser(search: SearchRequest){
     return this.httpClient.post<Array<User>>(`${this.baseUrl}/searchProject`, search);
   }
 
-  updateUser(updateUser: User) {
+  updateUser(updateUser: UserRequest) {
     return this.httpClient.put(`${this.baseUrl}/modif`, updateUser);
   }
 
