@@ -1,0 +1,56 @@
+<!-- <form class="d-flex SEARCH" (ngSubmit)="onSubmit()" [formGroup]="searchForm">
+  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" formControlName="name">
+  <button class="btn btn-outline-success" type="submit">
+    <i class="fas fa-search"></i>
+  </button>
+</form> -->
+
+<!-- <app-cart
+*ngFor="let data of dataUsers"
+(idToDelete)="onDelete($event)"
+[user]="data" class="list"
+class="list-projects">
+</app-cart> -->
+
+<!--
+<div class="container-user">
+  <h4>Ajouter un nouveau utilisateur</h4>
+  <button type="button" class="button"
+    routerLink="/newUser-"
+    routerLinkActive="active">
+    <div class="buttonAdd">
+      <i class="fas fa-plus-circle"></i>
+    </div>
+  </button>
+</div> -->
+
+
+<form class="d-flex SEARCH" (ngSubmit)="onSubmit()" [formGroup]="searchForm">
+  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" formControlName="name">
+  <button class="btn btn-outline-success" type="submit">
+    <i class="fas fa-search"></i>
+  </button>
+</form>
+  <div class="user">
+    <div class="list-users" *ngFor="let user of dataUsers">
+      <div class="container conteneur">
+        <div class="head">
+          <h2>Projet: <span>{{ user?.username }}</span></h2>
+
+        </div>
+        <hr>
+        <div class="content">
+          <h4>Date de Début: <span>{{ user?.email }}</span></h4>
+          <h4>Besoin: <span>{{ user?.presentation }}</span></h4>
+          <h4 *ngFor="let role of user?.roles">Role: <span>{{ tolowerRole(role.name) }}</span></h4>
+
+        </div>
+        <div class="buttons">
+          <button type="button" class="bouton"  (click)="deleteUser(user)">Supprimer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="buttons">
+  <p class="scroolTop"><a href="#" (click)="toBack($event)">Back to top</a></p>
+</div>
