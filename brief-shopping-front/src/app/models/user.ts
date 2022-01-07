@@ -7,5 +7,4 @@ export class User{
   password?: string;
   roles?: Array<Role>;
   presentation?: string;
-
  }
