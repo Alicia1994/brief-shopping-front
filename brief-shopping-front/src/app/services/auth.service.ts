@@ -69,13 +69,6 @@ export class AuthService {
     }
     return null;
   }
- getToken(){
-      const token:any =localStorage.getItem('TOKEN_APPLI');
-      console.log(token)
-      if(token){
-        return token;
-      }
-  }
 
   getCurrentUser(){
     const user_id:any =localStorage.getItem('USER_ID');
