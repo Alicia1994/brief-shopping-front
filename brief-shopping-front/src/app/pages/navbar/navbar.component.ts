@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -20,6 +21,7 @@ export class NavbarComponent implements OnInit {
 
     ) {
     this.title = '🪴 DVD';
+
 
     // this.plantService.subjectListProduct$.subscribe(data => {
     //   this.lengthListProduct = data.length;
@@ -42,3 +44,4 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 }
+
