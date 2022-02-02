@@ -57,6 +57,74 @@ export class UserComponent implements OnInit {
     )
   }
 
+  // getUser() {
+
+  //   let valuee = this.searchForm.value;
+  //   console.log(this.searchForm.value)
+  //   this.value=this.searchForm.value;
+  //   console.log(this.value)
+  //   this.userSubscription = this.userService.searchUser(this.value!).subscribe(
+  //     (resp: User) => {
+  //       this.dataUserr = resp;
+  //       console.log(this.dataUser)
+  //     }
+  //   )
+  // }
+
+  // getUser() {
+  //   let users = [this.getUsers()];
+  //   console.log(users);
+  //   for (let i = 0; i < users.length; i++) {
+  //     const e = users[i];
+  //     console.log(e);
+  //   }
+    // let valuee = this.searchForm.value;
+    // console.log(this.searchForm.value)
+    // this.value=this.searchForm.value;
+    // console.log(this.value)
+    // this.userSubscription = this.userService.searchUser(this.value!).subscribe(
+    //   (resp: User) => {
+    //     this.dataUserr = resp;
+    //     console.log(this.dataUser)
+    //   }
+    // )
+  // }
+
+  onClick(event:any){
+    // this.onKey(event);
+
+
+    console.log("clic!")
+  }
+
+
+  // onKey(event:any){
+  //   this.value = event.target.value;
+  //   console.log(event.target.value);
+
+  //   this.userSubscription = this.userService.searchUser(this.value!).subscribe(
+  //     (resp: User) => {
+  //       this.dataUserr = resp;
+  //       console.log(this.dataUser)
+  //     }
+  //   )
+  // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   onSubmit() {
     // ne fonctionne pas pour l'instant
     this.getUser();
