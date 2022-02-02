@@ -18,4 +18,10 @@ export class ProductService {
     return this.httpClient.get<Array<Product>>( this.baseUrl + '/all');
   }
 
+  findById(idProduct: Number):Observable<Product>{
+    return this.httpClient.get<Product>(this.baseUrl + '/get/' + idProduct);
+  }
+
+
+
 }

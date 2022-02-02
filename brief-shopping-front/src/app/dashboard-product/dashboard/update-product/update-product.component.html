@@ -1,0 +1,36 @@
+<div class="add-product-content">
+    <div class="container">
+      <div>
+        <h3 class="new-product-title">Modifier un article</h3>
+      </div>
+      <hr>
+  
+      <form [formGroup]="updateProductForm" (ngSubmit)="updateProduct()">
+        <div class="form-group">
+          <label class="product-title">Titre</label>
+          <input type="text" formControlName="title" class="form-control" placeholder="Title">
+        </div>
+        <div class="form-group">
+          <label class="product-content">Description</label>
+          <!-- <editor formControlName="content" [init]="{plugins: 'link'}"></editor> -->
+        </div>
+        <div class="form-group" formGroupName="categorie">
+          <label for="product-content">Choisir une catégorie</label>
+          <select formControlName="id">
+            <!-- <option *ngFor="let categ of category" [value]="category.id">{{category.name}}</option> -->
+          </select>
+        </div>
+  
+        <div class="form-group">
+          <label class="product-image">Image</label>
+          <!-- <input type="file" name="fileImage" class="form-control" placeholder="Title" accept="image/png, image/jpeg"
+            (change)="onSelectFile($event)"> -->
+          <!-- <img [src]="imgURL" alt="" height="200" *ngIf="imgURL"> -->
+        </div>
+  
+        <div class="form-group form-btn">
+          <button type="submit" class="btn btn-primary">Modifier</button>
+        </div>
+      </form>
+    </div>
+  </div>

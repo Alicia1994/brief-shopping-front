@@ -8,6 +8,11 @@ export const environment = {
   baseUrl: "http://localhost:8080/api"
 };
 
+export const environmentApi = {
+  apiUrlImage : "http://localhost:8080/product-photos"
+ 
+}
+
 // export const environmentApi = {
 //   apiUrlImage : "http://localhost:8080/post-photos"
 // }

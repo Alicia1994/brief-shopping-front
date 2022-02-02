@@ -1,0 +1,43 @@
+<div class="container">
+
+  <!-- <div *ngIf="product$ | async as products">
+    <div class="no-article" *ngIf="products.length == 0; else block">
+      <p>Vous n'avez publié aucun produit sur le site !</p>
+    </div> -->
+
+  <ng-template #block>
+    <!-- Display buttons of categories -->
+    <!-- <div class="buttons-categories">
+          <button class="focus" (click)="clickCat('Focus')"> Focus </button>
+          <button class="actualites" (click)="clickCat('Actualités')"> Actualités</button>
+          <button class="lutter" (click)="clickCat('Agir')">Agir</button>
+          <button class="all" (click)="clickAll()">Tous</button>
+        </div> -->
+
+    <div class="grid-row">
+      <div class="grid-item" *ngFor="let product of products">
+        <div class="grid-item-wrapper">
+          <div class="grid-item-container">
+            <div class="image"><img [src]="path(product)"></div>
+            <div class="grid-item-content">
+              <span class="item-title">{{product?.name}}</span>
+              <span class="item-category">#{{product?.category?.name}}</span>
+              <span class="item-excerpt"><i class="fas fa-user"></i>
+                {{product?.name}}, <i class="far fa-calendar-alt"></i>
+                <!-- {{setTimeToMoment(product?.createdOn)}}-->
+              </span>
+            </div>
+          </div>
+          <div class="buttons">
+            <button class="read-article" routerLink="/product/{{product.id}}">Visualiser</button>
+            <button class="read-article"
+              routerLink="/admin/handle-product/update-product/{{product.id}}">Modifier</button>
+            <button class="read-article">Supprimer</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+</div>
