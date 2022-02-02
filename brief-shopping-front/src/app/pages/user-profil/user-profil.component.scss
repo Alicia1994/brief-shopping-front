@@ -1,0 +1,37 @@
+
+.container{
+  padding: 1rem 0;
+  .bloc{
+    margin: 15px;
+    background-color: #138496;
+    margin: 1rem;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+    .title{
+      padding: 1rem;
+      color:white;
+    }
+  }
+  
+  button{
+    background-color: #9eb5d6;
+    color: white;
+    padding: 5px;
+    margin: auto;
+    padding: 10px;
+  }
+}
+
+
+
+
+
+// @media (max-width: 640px) {
+//   .container{
+//     .bloc{
+//       display: block;
+//     }
+//   }
+// }

@@ -9,10 +9,32 @@ import { PageNotFoundComponentComponent } from './pages/page-not-found-component
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 
+import { RegisterComponent } from './pages/register/register.component';
+import { LoginComponent } from './pages/login/login.component';
+import { CreateNewUserComponent } from './pages/create-new-user/create-new-user.component';
+import { UserComponent } from './components/user/user.component';
+import { CartComponent } from './components/cart/cart.component';
+import { UserProfilComponent } from './pages/user-profil/user-profil.component';
+import { EditUserComponent } from './pages/edit-user/edit-user.component';
+
+import { NavbarComponent } from './pages/navbar/navbar.component';
+import { HomepageComponent } from './pages/homepage/homepage.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponentComponent,
+
+    RegisterComponent,
+    LoginComponent,
+    CreateNewUserComponent,
+    UserComponent,
+    CartComponent,
+    UserProfilComponent,
+    EditUserComponent,
+
+
     NavbarComponent,
     HomepageComponent
   ],

@@ -1,0 +1,40 @@
+<div class="login-form text-center">
+  <main class="form-signin">
+    <form (ngSubmit)="onSubmit()" [formGroup]= "loginForm">
+      <h1>Merci de vous connecter</h1>
+
+      <div class="form-floating">
+        <input type="text"
+                class="form-control"
+                id="floatingInput"
+                placeholder=""
+                formControlName="username"
+                required>
+        <label for="floatingInput">username</label>
+      </div>
+      <div class="form-floating">
+        <input type="password"
+                class="form-control"
+                id="floatingPassword"
+                placeholder=""
+                formControlName="password"
+                required>
+        <label for="floatingPassword">Mot de passe</label>
+      </div>
+
+      <button class="w-100 btn btn-lg btn-primary"
+              type="submit"
+              [disabled]="loginForm.invalid">Se connecter</button>
+    </form>
+    <hr>
+    <div>
+      <p>Pas encore inscrit ?
+        <span>
+          <a href="http://" routerLink="/register" routerLinkActive="active">Incrivez-vous
+          </a>
+        </span>
+      </p>
+    </div>
+  </main>
+</div>
+

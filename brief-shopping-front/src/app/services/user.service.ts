@@ -1,9 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { SearchProjetRequest } from '../models/payload/search-projet.request';
+import { SearchRequest } from '../models/payload/searchRequest';
 import { UserRequest } from '../models/payload/user.request';
-
+import { User } from '../models/user';
+// import { HttpClient } from '@angular/common/http';
+// import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { map } from 'rxjs/operators';
+import { JwtHelperService } from '@auth0/angular-jwt';
+// import { UserRequest } from '../models/payload/user.request';
 
 @Injectable({
   providedIn: 'root'
@@ -38,15 +44,15 @@ export class UserService {
     return this.httpClient.get<Array<UserRequest>>(`${this.baseUrl}`);
   }
 
-  getByUsername(username: string) {
-    return this.httpClient.get<UserRequest>(`${this.baseUrl}/${username}`);
+  searchUser(username: String){
+    return this.httpClient.get<User>(`http://localhost:8080/api/users/search/${username}`);
   }
 
-  searchUser(search: SearchProjetRequest){
-    return this.httpClient.post<Array<User>>(`${this.baseUrl}/searchProject`, search);
-  }
+  // search(user: SearchRequest){
+  //   return this.httpClient.get<User>(`http://localhost:8080/api/users/search`, user);
+  // }
 
-  updateUser(updateUser: User) {
+  updateUser(updateUser: UserRequest) {
     return this.httpClient.put(`${this.baseUrl}/modif`, updateUser);
   }
 

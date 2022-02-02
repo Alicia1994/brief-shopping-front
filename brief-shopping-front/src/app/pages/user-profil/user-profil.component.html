@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="bloc">
+    <div class="infos">
+      <p class="title">PSEUDO :
+        <span class="text">{{user?.username}}</span>
+      </p>
+      <p class="title" *ngFor="let role of user?.roles">STATUS :
+        <span class="text"> {{ tolowerRole(role.name) }}</span>
+      </p>
+      <p class="title">EMAIL :
+        <span class="text"> {{user?.email}} </span>
+      </p>
+      <p class="title">PRESENTATION :
+        <span class="text">{{user?.presentation}}</span>
+      </p>
+    </div>
+
+    <button type="button" class="btn btn-outline-secondary mr-2" placement="top" ngbTooltip="Modifier le projet" routerLink="/edit-profil">
+      <i class="fas fa-user-edit"></i>Modifier
+    </button>
+  </div>
+
+</div>
+
+
+<!-- <h1>hello</h1>
+<div class="container">
+  <div class="bloc">
+    <div class="infos">
+      <p class="title">PSEUDO :
+        <span class="text">{{user?.username}}</span>
+      </p>
+      <p class="title" *ngFor="let role of user?.roles">STATUS :
+        <span class="text"> {{ tolowerRole(role.name) }}</span>
+      </p>
+      <p class="title">EMAIL :
+        <span class="text"> {{user?.email}} </span>
+      </p>
+    </div>
+
+    <div class="presentation">
+        <p class="title">PRESENTATION :
+          <span class="text">{{user?.presentation}}</span>
+        </p>
+    </div>
+  </div>
+    <button type="button" class="btn btn-outline-secondary mr-2" placement="top" ngbTooltip="Modifier le projet" routerLink="/edit-profil">
+      <i class="fas fa-user-edit"></i>
+    </button>
+</div> -->
