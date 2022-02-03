@@ -1,0 +1,17 @@
+<div class=container-full>
+    <div class="title-dash">
+      <h1>Mon tableau de bord</h1>
+      <div class="container">
+        <!-- <div class="panel comment" *ngIf="users$ | async as users" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/admin/handle-user"><span>{{users.length}} </span>UTILISATEURS</a>
+        </div> -->
+        <div class="panel product" *ngIf="products$ | async as products" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/admin/handle-product"><span>{{products.length}} </span>PRODUCTS</a>
+        </div>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+  
