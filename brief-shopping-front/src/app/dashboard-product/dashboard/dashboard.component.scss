@@ -1,0 +1,153 @@
+h1{
+    font-size: 1.5em;
+    text-align: center;
+    padding: 15px;
+    border: solid;
+}
+
+.container-full {
+    margin: 20px;
+    padding: 10px;
+    background: rgba(241, 184, 255, 1);   
+    margin-bottom: 300px;
+}
+
+.container{
+  text-align: center;
+}
+
+.active{
+  background-color: #A144E0!important;
+}
+
+$body-bg: #c1bdba;
+$form-bg: #13232f;
+$white: #ffffff;
+
+$main: #A144E0;
+
+$main-light: lighten($main,5%);
+$main-dark: darken($main,5%);
+
+$gray-light: white;
+$gray: #ddd;
+
+$thin: 300;
+$normal: 400;
+$bold: 600;
+$br: 4px;
+
+a {
+    text-decoration:none;
+    color:$main;
+    transition:.5s ease;
+    &:hover {
+      color:$main-dark;
+    }
+  }
+  .tab-group {
+    list-style:none;
+    padding:0;
+    margin:0 0 40px 0;
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+  li a {
+    display:block;
+    text-decoration:none;
+    padding:15px;
+    background:rgba($gray-light,.25);
+    color:$gray-light;
+    font-size:20px;
+    float:left;
+    width:50%;
+    text-align:center;
+    cursor:pointer;
+    transition:.5s ease;
+    color: black;
+    &:hover {
+      background:$main-dark;
+      color:white;
+    }
+  }
+  
+}
+
+/////
+::-webkit-meter-even-less-good-valuebody {
+  padding: 20px;
+  font: 16px/22px "Open Sans", sans-serif;
+}
+.container {
+  margin: 0 auto;
+  max-width: 980px;
+  display: flex;
+  justify-content: center;
+}
+.panel {
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  width: 300px;
+  height: 160px;
+  margin: 10px;
+  font-size: 32px;
+  font-weight: 600;
+  color: #fff;
+  overflow: hidden;
+  border-radius: 8px;
+  a {
+    position: relative;
+    display: block;
+    padding: 12px 25px 25px 25px;
+    color: #fff;
+    text-decoration: none;
+    z-index: 2;
+    span {
+      display: block;
+      font-size: 96px;
+      font-weight: 700;
+      line-height: 96px;
+    }
+  }
+  &:after {
+    position: absolute;
+    font-family: FontAwesome;
+    color: rgba(0, 0, 0, 1);
+    z-index: 1;
+    transition: all .5s;
+    // Use this to prevent misplacing background caused by default line-height
+    line-height: normal;
+  }
+  &.post {
+    background-color: #b8aa0e;
+    &:after {
+      content: "\f08d";
+      font-size: 200px;
+      color: darken(#b8aa0e, 4%);
+      top: 45px;
+      right: 60px;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+    &:hover:after {
+      top: 8px;
+    }
+  }
+  &.comment{
+    background-color: #0377c0;
+    &:after {
+      content: "\f075";
+      font-size: 180px;
+      color: darken(#0377c0, 4%);
+      top: 30px;
+      right: 35px;
+    }
+    &:hover:after {
+      top: -5px;
+    }
+  }
+}

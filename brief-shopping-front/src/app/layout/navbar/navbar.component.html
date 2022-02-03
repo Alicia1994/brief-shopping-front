@@ -11,7 +11,7 @@
                 <a class="nav-link" routerLink="panier" routerLinkActive="active-custom">Panier</a>
                 <a class="nav-link" routerLink="profil" routerLinkActive="active-custom">Profil</a>
                 <a class="nav-link" *ngIf="isAdmin()" routerLink="user" routerLinkActive="active-custom">UserList</a>
-                <a class="nav-link" *ngIf="isAdmin()" routerLink="admin" routerLinkActive="active-custom">Dashboard</a>
+                <a class="nav-link" routerLink="admin" routerLinkActive="active-custom">Dashboard</a>
                 <a class="nav-link" (click)="logout()" routerLink="login" routerLinkActive="active-custom">Déconnexion</a>
                 <a class="nav-link disabled">Plus d'option bientôt {{ lengthListProduct }}</a>
             </div>

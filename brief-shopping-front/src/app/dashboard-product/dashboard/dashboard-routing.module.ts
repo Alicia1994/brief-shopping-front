@@ -10,13 +10,11 @@ const routes: Routes = [
   {
     path: '', 
     component: DashboardComponent, 
-    canActivate: ["onlyGuard"], 
-    data: { roles: ['ADMIN'] }, 
     children: [
-      { path: "handle-post/list-products", component: ListProductsComponent },
       { path: "handle-product", component: HandleProductComponent },
-      { path: "handle-post/add-product", component: AddProductComponent },
-      { path: 'handle-post/update-product/:id', component: UpdateProductComponent },
+      { path: "handle-product/list-products", component: ListProductsComponent },
+      { path: "handle-product/add-product", component: AddProductComponent },
+      { path: 'handle-product/update-product/:id', component: UpdateProductComponent },
       {path:'', redirectTo: "/admin", pathMatch:'full'}
     ]
   }

@@ -13,9 +13,11 @@ import { UserComponent } from './components/user/user.component';
 import { CartComponent } from './components/cart/cart.component';
 import { UserProfilComponent } from './pages/user-profil/user-profil.component';
 import { EditUserComponent } from './pages/edit-user/edit-user.component';
-import { NavbarComponent } from './pages/navbar/navbar.component';
+import { NavbarComponent } from './layout/navbar/navbar.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { DashboardModule } from './dashboard-product/dashboard/dashboard.module';
+import { LayoutComponent } from './layout/layout.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 
 @NgModule({
@@ -31,6 +33,8 @@ import { DashboardModule } from './dashboard-product/dashboard/dashboard.module'
     EditUserComponent,
     NavbarComponent,
     HomepageComponent,
+    LayoutComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +42,7 @@ import { DashboardModule } from './dashboard-product/dashboard/dashboard.module'
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     DashboardModule
   ],
 
@@ -46,4 +51,5 @@ import { DashboardModule } from './dashboard-product/dashboard/dashboard.module'
  ],
  bootstrap: [AppComponent]
 })
+
 export class AppModule { }

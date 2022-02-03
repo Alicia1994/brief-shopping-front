@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Category } from 'src/app/models/category';
 import { Product } from 'src/app/models/product';
 import { AdminService } from 'src/app/services/admin.service';
 import { CategoryService } from 'src/app/services/category.service';
@@ -16,12 +17,13 @@ export class AddProductComponent implements OnInit {
   addProductForm: FormGroup;
   product: Product | undefined;
   currentUsername?: any;
-  categories: [] = [];
+  //categories: [] = [];
   userFile: any;
   public imagePath: any;
   imgURL: any;
   localStorageService: any;
-
+  categories: Category[] = [];
+  
   constructor(
     private productService: ProductService,
     private router: Router,
@@ -34,10 +36,23 @@ export class AddProductComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.retrieveCategories();
     this.initForm();
     this.categoryService.findAll().subscribe((data: any) => {
       this.categories = data;
     })
+  }
+
+  retrieveCategories(): void {
+    this.categoryService.findAll()
+      .subscribe(
+        data => {
+          this.categories= data;
+          console.log(this.categories);
+        },
+        error => {
+          console.log(error);
+        });
   }
 
       /****** Form to register the post's informations ******/

@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { EditorModule } from '@tinymce/tinymce-angular';
-import { AppRoutingModule } from '../../app-routing.module';
 import { AddProductComponent } from './add-product/add-product.component';
 import { HandleProductComponent } from './handle-product/handle-product.component';
 import { ListProductsComponent } from './list-products/list-products.component';
@@ -21,7 +20,6 @@ import { DashboardComponent } from './dashboard.component';
     ],
     imports: [
       CommonModule,
-      AppRoutingModule,
       ReactiveFormsModule,
       FormsModule, 
       RouterModule,

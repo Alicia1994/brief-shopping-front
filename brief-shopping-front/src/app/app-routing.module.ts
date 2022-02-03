@@ -5,16 +5,17 @@ import { UserComponent } from './components/user/user.component';
 import { CreateNewUserComponent } from './pages/create-new-user/create-new-user.component';
 import { EditUserComponent } from './pages/edit-user/edit-user.component';
 import { LoginComponent } from './pages/login/login.component';
-
 import { HomepageComponent } from './pages/homepage/homepage.component';
-
-
 import { PageNotFoundComponentComponent } from './pages/page-not-found-component/page-not-found-component.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { UserProfilComponent } from './pages/user-profil/user-profil.component';
+import { LayoutComponent } from './layout/layout.component';
+import { DashboardComponent } from './dashboard-product/dashboard/dashboard.component';
+import { AddProductComponent } from './dashboard-product/dashboard/add-product/add-product.component';
 
 const routes: Routes = [
-
+{
+  path: '', component: LayoutComponent, children: [
 
   { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent},
@@ -24,9 +25,16 @@ const routes: Routes = [
   { path: 'profil', component: UserProfilComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: HomepageComponent, pathMatch: 'full'},
-
-  { path: '**', component: PageNotFoundComponentComponent }
-
+  { path: 'admin', component: DashboardComponent},
+  { path: 'admin/add-product', component: AddProductComponent},
+  // {
+  //   path: 'admin', 
+  //   loadChildren: () => import('./dashboard-product/dashboard/dashboard.module').then(m => m.DashboardModule)
+  // },
+ { path: '**', component: PageNotFoundComponentComponent },
+ { path: '', redirectTo: '/not-found', pathMatch: 'full' },
+]
+}
 ];
 
 @NgModule({
