@@ -1,4 +1,7 @@
-
+.bloc{
+  margin: 1rem;
+  color: #138496;
+}
 
 .user{
   display: flex;
@@ -35,52 +38,5 @@
         }
       }
     }
-  }
-  .list-projects{
-    margin: 1rem;
-    display: flex;
-    justify-content: space-around;
-
-    .conteneur{
-      margin: 15px;
-      background-color: #138496;
-      margin: 1rem;
-      color: white;
-      border-radius: 10px;
-      width: 25%;    }
-
-    .buttons{
-      margin: 1rem;
-      display: flex;
-      justify-content: space-around;
-      .button{
-        border-radius: 5px;
-        padding: 5px;
-        margin: 5px;
-        background-color: cadetblue;
-        color: white;
-        border: none;
-        &:hover{
-          background-color: #979690;
-          color: black;
-        }
-      }
-    }
-  }
-
-}
-
-
-.buttons{
-  padding: 10px;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  button{
-    color: #3c5aa6;
-    border: #f27e63 1px solid;
-    padding: 5px;
-    margin: 5px;
-    border-radius: 5px;
   }
 }

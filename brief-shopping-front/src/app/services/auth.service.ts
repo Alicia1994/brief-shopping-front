@@ -41,7 +41,6 @@ export class AuthService {
       map((resp: any) => {
         localStorage.setItem('TOKEN_APPLI', resp.accessToken);
         localStorage.setItem('USER_ID', resp.id);
-        // console.log(localStorage.setItem('TOKEN_APPLI', resp.accessToken));
         console.log(resp.id);
         console.log('Token Save');
         return resp;
@@ -80,7 +79,6 @@ export class AuthService {
   getUserTokenRole(){
     const token:any = localStorage.getItem("TOKEN_APPLI");
     const decode = this.jwtHelper.decodeToken(token);
-    // console.log( decode);
     if (decode !== null) {
       if (!this.jwtHelper.isTokenExpired(token)) {
         return { ...decode, token };

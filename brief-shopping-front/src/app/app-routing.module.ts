@@ -8,6 +8,7 @@ import { LoginComponent } from './pages/login/login.component';
 
 import { HomepageComponent } from './pages/homepage/homepage.component';
 
+
 import { PageNotFoundComponentComponent } from './pages/page-not-found-component/page-not-found-component.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { UserProfilComponent } from './pages/user-profil/user-profil.component';
@@ -21,14 +22,8 @@ const routes: Routes = [
   { path: 'user', component: UserComponent},
   { path: 'edit-profil', component: EditUserComponent},
   { path: 'profil', component: UserProfilComponent},
-
-  { path: '**', component: RegisterComponent},
-
-  // { path: '**', component: PageNotFoundComponentComponent }
-
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: HomepageComponent, pathMatch: 'full'},
-
 
   { path: '**', component: PageNotFoundComponentComponent }
 

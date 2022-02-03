@@ -1,29 +1,5 @@
-<!-- <div class="projet"> -->
-  <!-- <div class="list-projects">
-    <div class="head">
-      <h2>Projet: <span>{{ user?.username }}</span></h2>
-
-    </div>
-    <hr>
-    <div class="content">
-      <h4>Date de Début: <span>{{ user?.email }}</span></h4>
-      <h4>Besoin: <span>{{ user?.presentation }}</span></h4>
-      <h4 *ngFor="let role of user?.roles">Role: <span>{{ tolowerRole(role.name) }}</span></h4>
-
-    </div>
-    <div class="buttons">
-        <button type="button" class="button" placement="top" ngbTooltip="Modifier">
-        Modifier
-      </button>
-      <button type="button" class="button"  (click)="deleteUser(user?.id)" ngbTooltip="Supprimer">
-        Supprimer
-      </button>
-    </div>
-  </div> -->
-<!-- </div> -->
-
-  <div class="projet">
-    <div class="list-projects">
+  <div class="user">
+    <div class="list-users">
       <div class="head">
         <h2>Projet: <span>{{ user?.username }}</span></h2>
 
@@ -46,34 +22,9 @@
     </div>
 
 
-<!--
-    <div class="list-projets" *ngFor="let user of dataUsers">
-      <div class="container conteneur">
-        <div class="entete">
-          <h2>Pseudo: <span>{{ user.username }}</span></h2>
-        </div>
-        <hr>
-        <div class="content">
-          <h4>Email: <span>{{ user.email }}</span></h4>
-          <h4 *ngFor="let role of user?.roles">Role: <span>{{ tolowerRole(role.name) }}</span></h4>
-        </div>
-        <div class="buttons">
-          <button type="button" class="bouton"  (click)="deleteUser(user)">Supprimer</button>
-        </div>
-      </div>
-    </div>
-   </div> -->
 
-
-  <!-- <div class="buttons">
-  <p class="scroolTop"><a href="#" (click)="toBack($event)">Back to top</a></p>
-  <button class="button" routerLink="/home-admin" routerLinkActive="active">Home</button>
-  <button class="button" routerLink="/admin-projet" routerLinkActive="active">Projet</button>
-</div> -->
-
-
-<div class="projet">
-  <div class="list-projets" *ngFor="let user of dataUsers">
+<div class="user">
+  <div class="list-users" *ngFor="let user of dataUsers">
     <div class="container conteneur">
       <div class="entete">
         <h2>Pseudo: <span>{{ user.username }}</span></h2>
